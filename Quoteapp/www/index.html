@@ -1,0 +1,118 @@
+<html>
+<head><title>Quote It App</title>
+	<style>
+		*{
+  margin:0;
+  padding:0;
+  align-self: center;
+}
+body{
+	align-self: center;
+  font-family:arial,sans-serif;
+  font-size:100%;
+  margin:3em;
+  background:#3a9fe5;
+  color:#fff;
+}
+h2,p{
+  font-size:100%;
+  font-weight:normal;
+}
+
+
+a{
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:20em;
+  width:20em;
+  padding:1em;
+  align-self: center;
+}
+
+a{
+  text-decoration:none;
+  color:#000;
+  background:#ffff00;
+  display:block;
+  align-self: center;
+  height:15em;
+  width:15em;
+  padding:1em;}
+  a:hover, a:focus{
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:5;}
+
+textarea {
+  border: thin solid #ffff00;
+  width: 250px;
+  height: 300px
+  floats: center;
+  font-size: 30px;
+  background: #ffff00;
+}
+ .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 16cm;
+    cursor: pointer;
+}
+
+.button {padding: 10px 24px;}
+.button:hover, a:focus{
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:5;}
+
+	</style>
+</head>
+<body>
+<button class="button"  onclick="Quote()">refresh</button><button class="button"  onclick="saveData()">Save Qoutation</button><br><br>
+   <center> <a href="#">
+      <font size="5">Quotation:</font>
+      
+
+      <center><textarea wrap="virtual" placeholder="Enter   quotation here.." id="ramil" rows="6" cols="80" maxlength="500"></textarea> 
+</center>
+    </a></center>
+
+  
+  <script>
+
+function saveData(){
+  var Quotation = localStorage.getItem('ramil'), 
+      arr = [];
+  if (!Quotation) { Quotation = ''; }  
+  arr = Quotation.split(',');
+
+  arr.push(document.getElementById("ramil").value);
+  Quotation = arr.join(' ');
+  localStorage.setItem("ramil", Quotation);
+}
+function Quote() {
+  var quotes = localStorage.getItem('ramil');
+  document.getElementById('ramil').innerHTML =""+quotes.substr(1);
+}
+
+</script>
+    </body>
+    </html>
+
+    
